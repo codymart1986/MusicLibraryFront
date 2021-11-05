@@ -15,7 +15,7 @@ class SearchBar extends Component{
         });
     }
 
-    handleSubmit =(event) => {
+    handleSubmit = (event) => {
         event.preventDefault();
         let results = this.props.search.filter(song => {
             if (song.title.toLowerCase()===this.state.searchTerm.toLowerCase()){
@@ -30,7 +30,7 @@ class SearchBar extends Component{
             if (song.genre.toLowerCase()===this.state.searchTerm.toLowerCase()){
                 return song
             }
-            if (song.release_date.toLowerCase()===this.state.searchTerm.toLowerCase()){
+            if (song.releaseDate.toLowerCase()===this.state.searchTerm.toLowerCase()){
                 return song
             }
         });

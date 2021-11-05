@@ -2,7 +2,6 @@ import axios from 'axios';
 import './App.css';
 import SearchBar from './Components/SearchBar/SearchBar';
 import React, { Component } from 'react';
-import { render } from '@testing-library/react';
 import MusicTable from './Components/MusicTable/MusicTable';
 
 
