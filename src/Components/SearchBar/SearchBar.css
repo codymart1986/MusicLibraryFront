@@ -1,8 +1,9 @@
 .search {
     position: fixed;
-    top: 55px;
+    top: 15px;
     width: 100%;
     display: flex;
     height: 5%;
+    background-color: #0097E1;
 
 }
