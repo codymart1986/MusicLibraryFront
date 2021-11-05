@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import './SearchBar.css';
 
 class SearchBar extends Component{
-    constructor(props){
-        super (props);
+    constructor(props) {
+        super(props);
         this.state = {
-            search: ""
+        search:""
         }
     }
 
@@ -15,7 +15,7 @@ class SearchBar extends Component{
         });
     }
 
-    handleSubmit = (event) => {
+    handleSubmit =(event) => {
         event.preventDefault();
         let results = this.props.search.filter(song => {
             if (song.title.toLowerCase()===this.state.searchTerm.toLowerCase()){
@@ -30,22 +30,31 @@ class SearchBar extends Component{
             if (song.genre.toLowerCase()===this.state.searchTerm.toLowerCase()){
                 return song
             }
-            if (song.releaseDate.toLowerCase()===this.state.searchTerm.toLowerCase()){
+            if (song.release_date.toLowerCase()===this.state.searchTerm.toLowerCase()){
                 return song
             }
         });
         this.setState({
-            search: ""
+            search:""
         })
-        this.props.SearchBar(results)
+        this.props.searchBar(results)   
     }
+
     render(){
 
-        return (
-
-            <div>
-                
-            </div>
-        )
-    }
+        return (  
+            
+        <center>
+            <form onSubmit={this.handleSubmit}>
+            <div className="search">
+                    <input placeholder="Title, Artist, Album, Genre, Release date(mm/dd/yyyy)" type='text' name="searchTerm" size="50" value={this.state.searchTerm} onChange={this.handleChange}/> 
+                    <input type="button" value="search" type="submit" />
+                </div>
+            </form>
+        </center>    
+        
+    );
 }
+}
+
+export default SearchBar
