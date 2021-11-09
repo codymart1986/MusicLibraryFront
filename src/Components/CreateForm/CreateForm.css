@@ -1,0 +1,13 @@
+.form {
+    top: 25px;
+    width: 400px;
+    font-size: 20px;
+    background: #00BDA0;
+    padding: 30px 30px 15px 30px;
+    border: 5px solid black;
+    margin: 0 auto;
+}
+
+.form label {
+    display: block;
+}

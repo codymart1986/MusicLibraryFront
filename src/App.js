@@ -3,6 +3,7 @@ import './App.css';
 import SearchBar from './Components/SearchBar/SearchBar';
 import React, { Component } from 'react';
 import MusicTable from './Components/MusicTable/MusicTable';
+import CreateForm from './Components/CreateForm/CreateForm';
 
 
 class App extends Component {
@@ -39,9 +40,9 @@ searchSongs = (query) => {
   render() {
     return (
       <div className='container-fluid'>
-
-        <MusicTable songs={this.state.songs} />
+        <CreateForm/>
         <SearchBar  search={this.state.songs} searchBar={this.searchSongs} />
+        <MusicTable songs={this.state.songs} />
         
       </div>
       
