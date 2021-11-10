@@ -25,7 +25,7 @@ class App extends Component {
 
   async allSongs(){
     
-      let response = await axios.get("http://www.devcodecampmusiclibrary.com/api/music");
+      let response = await axios.get("http://localhost:3000/api/songs");
       this.setState({
         songs:response.data
       })

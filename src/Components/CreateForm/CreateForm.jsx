@@ -28,32 +28,32 @@ class CreateForm extends Component {
             genre: this.state.genre,
             releaseDate: this.state.releaseDate,
         };
-        // axios.post(create endpoint here)
+        axios.post("http://localhost:3000/api/songs", data)
     }
 
     render(){
         return(
             <div className="form">
-                <form className="post">
+                <form className="post" onSubmit={this.handleSubmit}>
                     <div>
                         <label>Title</label>
-                        <input type="text" name="title"/>
+                        <input type="text" name="title" onChange={this.handleChange} value={this.state.title}/>
                     </div>
                     <div>
                         <label>Album</label>
-                        <input type="text" name="album"/>
+                        <input type="text" name="album" onChange={this.handleChange} value={this.state.album}/>
                     </div>
                     <div>
                         <label>Artist</label>
-                        <input type="text" name="artist"/>
+                        <input type="text" name="artist" onChange={this.handleChange} value={this.state.artist}/>
                     </div>
                     <div>
                         <label>Genre</label>
-                        <input type="text" name="genre"/>
+                        <input type="text" name="genre" onChange={this.handleChange} value={this.state.genre}/>
                     </div>
                     <div>
                         <label>Release Date(mm/dd/yyyy)</label>
-                        <input type="dateField" name="releaseDate"/>
+                        <input type="text" name="releaseDate" onChange={this.handleChange} value={this.state.releaseDate}/>
                     </div>
                     <button type="submit">Add Song to Library</button>
                 </form>
